@@ -15,7 +15,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
-        android:text="Add manually the products that you have (list through the sign ( , ) ) or use your voice by clicking on the microphone button on the right."
+        android:text="@string/add_the_products_welcome_text"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,12 +27,16 @@
         android:layout_height="72dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
+        android:hint="@string/list_of_products_hint_text"
+        android:textSize="14sp"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toStartOf="@+id/speechActionButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iHaveTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/iHaveTextView"
+        tools:ignore="UnknownId" />
 
     <Button
         android:id="@+id/okButton"
@@ -40,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:text="ОК"
+        android:text="@string/ok_button_text"
         app:layout_constraintBottom_toBottomOf="@+id/addButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
@@ -50,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="ADD"
+        android:text="@string/add"
         app:layout_constraintEnd_toStartOf="@+id/cancelButton"
         app:layout_constraintStart_toEndOf="@+id/okButton"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
@@ -66,11 +70,13 @@
         app:layout_constraintTop_toTopOf="@+id/addButton" />
 
     <TextView
-        android:id="@+id/posibilityByingFoodTextView"
+        android:id="@+id/opportunityBuyingFoodTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Can you bye needed ingridients?"
+        android:textSize="20sp"
+        android:minHeight="48dp"
+        android:text="@string/can_you_bye_needed_ingredients"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addButton" />
@@ -79,11 +85,13 @@
         android:id="@+id/yesNoRadioGroup"
         android:layout_width="300dp"
         android:layout_height="30dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/posibilityByingFoodTextView">
+        app:layout_constraintTop_toBottomOf="@+id/opportunityBuyingFoodTextView">
 
         <RadioButton
             android:id="@+id/yesRadioButton"
@@ -91,7 +99,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:buttonTint="#2ABC30"
-            android:text="Yes"
+            android:minHeight="48dp"
+            android:text="@string/yes_radio_button"
+            android:textSize="20sp"
             tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
@@ -100,8 +110,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:buttonTint="#C33B3B"
-            android:text="No"
-            android:textSize="16sp" />
+            android:checked="true"
+            android:minHeight="48dp"
+            android:text="@string/no_radio_button"
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </RadioGroup>
 
@@ -111,6 +124,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:contentDescription="@string/speakable_text_of_speech_button"
         android:foreground="@android:drawable/ic_btn_speak_now"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/editTextTextMultiLine"
@@ -124,7 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="What do you want to cook?"
+        android:text="@string/what_do_you_want_to_cook_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yesNoRadioGroup" />
@@ -145,25 +159,26 @@
             android:id="@+id/firstCourseRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="First course" />
+            android:text="@string/first_course_radio_button_text" />
 
         <RadioButton
             android:id="@+id/mainCourseRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Main course" />
+            android:text="@string/main_course_radio_button_text" />
 
         <RadioButton
             android:id="@+id/dessertRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dessert" />
+            android:text="@string/dessert_radio_button_text" />
 
         <RadioButton
             android:id="@+id/anyDishRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Any dish" />
+            android:checked="true"
+            android:text="@string/any_dish_radio_button_text" />
     </RadioGroup>
 
     <TextView
@@ -171,7 +186,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="culinary trends of which country?"
+        android:text="@string/culinary_trends_question_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selectTypeOfDish" />
@@ -185,15 +200,18 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="#AF4141"
         android:backgroundTintMode="screen"
+        android:contentDescription="@string/culinary_trends_question_text"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/culinaryTrendsCountryTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/culinaryTrendsCountryTextView"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/searchButton"
         android:layout_width="271dp"
         android:layout_height="48dp"
-        android:text="Start searching"
+        android:text="@string/start_searching_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
