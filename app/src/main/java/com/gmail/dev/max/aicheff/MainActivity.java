@@ -67,11 +67,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.cancelButton:
                 cancelAddText();
                 break;
-            case R.id.speechButton:
+           /* case R.id.speechButton:
                 //speechAddText();
-                break;
+                break;*/ //do later to future features
             case R.id.searchButton:
-                searchTextRequest();
+                searchTextRequest();//dodelat peredachu dannih na druguu activity
                 break;
             default:
                 break;
@@ -99,6 +99,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void searchTextRequest(){
+        //dobavit peredachu dannih na druguu activity cherez intent
+
         Intent resultIntent = new Intent(MainActivity.this,
                 ResultViewActivity.class);
         startActivity(resultIntent);
