@@ -23,6 +23,7 @@
         have</string>
     <string name="list_of_products_hint_text">write a list of your products separated by commas (,).
         For example: flour, sugar, milk</string>
+    <string name="resetToastText">reset</string>
 
 
 </resources>
