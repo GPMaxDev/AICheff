@@ -25,14 +25,14 @@
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="288dp"
         android:layout_height="72dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/list_of_products_hint_text"
-        android:textSize="14sp"
         android:inputType="textMultiLine"
+        android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/speechActionButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iHaveTextView"
@@ -40,46 +40,35 @@
 
     <Button
         android:id="@+id/okButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="173dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
         android:text="@string/ok_button_text"
-        app:layout_constraintBottom_toBottomOf="@+id/addButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
-
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/add"
-        app:layout_constraintEnd_toStartOf="@+id/cancelButton"
-        app:layout_constraintStart_toEndOf="@+id/okButton"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        tools:layout_editor_absoluteY="246dp" />
 
     <Button
         android:id="@+id/cancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="@android:string/cancel"
-        app:layout_constraintBottom_toBottomOf="@+id/addButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/addButton" />
+        app:layout_constraintStart_toEndOf="@+id/okButton"
+        tools:layout_editor_absoluteY="243dp" />
 
     <TextView
         android:id="@+id/opportunityBuyingFoodTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
         android:minHeight="48dp"
         android:text="@string/can_you_bye_needed_ingredients"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addButton" />
+        tools:layout_editor_absoluteY="304dp" />
 
     <RadioGroup
         android:id="@+id/yesNoRadioGroup"
@@ -137,9 +126,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="@string/what_do_you_want_to_cook_text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yesNoRadioGroup" />
 
@@ -148,7 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -188,6 +178,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/culinary_trends_question_text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selectTypeOfDish" />
 
@@ -216,5 +207,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/culinaryTrendsSpinner" />
+
+    <TextView
+        android:id="@+id/inputResultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Your product list: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+    <TextView
+        android:id="@+id/listOfProductsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/inputResultTextView"
+        app:layout_constraintTop_toTopOf="@+id/inputResultTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

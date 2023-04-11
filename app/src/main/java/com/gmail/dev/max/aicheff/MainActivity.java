@@ -14,17 +14,17 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //private String resultingRequestString = "";
-    private StringBuilder resultingRequestStringBuilder = new StringBuilder();
+    //private StringBuilder resultingRequestStringBuilder = new StringBuilder();//pozje разделить обьявление и инициализацию
 
 
-    Button okButton, addButton, cancelButton, speechButton, searchButton;
+    Button okButton, cancelButton, speechButton, searchButton;
 
     RadioGroup yesNoBuyingRadioGroup, selectTypeOfDishRadioGroup;
 
     RadioButton firstCourseRadioButton, mainCourseRadioButton,
             dessertRadioButton, anyDishRadioButton, yesRadioButton, noRadioButton;
 
-    TextView inputIngredientsTextView; /// ????
+    TextView inputIngredientsTextView, resultInputInTextView, listOfProductsTextView; /// ????
 
 
     @Override
@@ -33,21 +33,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
          //manual input text
         inputIngredientsTextView = findViewById(R.id.editTextTextMultiLine);
+        resultInputInTextView = findViewById(R.id.inputResultTextView);
+        listOfProductsTextView = findViewById(R.id.listOfProductsTextView);
         //buttons
         searchButton = findViewById(R.id.searchButton);
-        searchButton.setOnClickListener(v -> onClick(v));
+        searchButton.setOnClickListener(this::onClick);
 
         okButton = findViewById(R.id.okButton);
-        okButton.setOnClickListener(v -> onClick(v));
-
-        addButton = findViewById(R.id.addButton);
-        addButton.setOnClickListener(v -> onClick(v));
+        okButton.setOnClickListener(this::onClick);
 
         cancelButton = findViewById(R.id.cancelButton);
-        cancelButton.setOnClickListener(v -> onClick(v));
+        cancelButton.setOnClickListener(this::onClick);
 
         speechButton = findViewById(R.id.speechButton);
-        speechButton.setOnClickListener(v -> onClick(v));
+        speechButton.setOnClickListener(this::onClick);
 
 
     }
@@ -59,9 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.okButton:
                 saveText();
-                break;
-            case R.id.addButton:
-                //addTextToListOfProducts();
                 break;
 
             case R.id.cancelButton:
@@ -87,16 +83,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(inputIngredientsTextView.getText() != ""
                 && inputIngredientsTextView.getText() != null){
 
-            StringBuilder inputIngredientsTextViewStringBuilder = new StringBuilder();
-            inputIngredientsTextViewStringBuilder.append(inputIngredientsTextView.getText());
-            System.out.println(inputIngredientsTextView.getText().toString());// dlya testa
-            Toast.makeText(getApplicationContext(), inputIngredientsTextView
-                            .getText()
-                            .toString(),
-                    Toast.LENGTH_LONG).show();// dlya testa
+            resultInputInTextView.setText(R.string.sumProductListHeaderString);
+            listOfProductsTextView.setText(inputIngredientsTextView.getText());
+            Toast.makeText(getApplicationContext(), R.string.successAddProductsToList,
+                    Toast.LENGTH_SHORT).show();
 
         }
     }
+
 
     private void searchTextRequest(){
         //dobavit peredachu dannih na druguu activity cherez intent
@@ -107,14 +101,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void cancelAddText(){
-        inputIngredientsTextView.setText(R.string.resetToastText);
-        Toast.makeText(getApplicationContext(), inputIngredientsTextView
-                        .getText()
-                        .toString(),
-                Toast.LENGTH_LONG).show();// dlya testa
+        inputIngredientsTextView.setText("");
+        listOfProductsTextView.setText("");
+        resultInputInTextView.setText(R.string.sumProductListHeaderString);
 
-
-
+         Toast.makeText(getApplicationContext(), R.string.resetToastText,
+                Toast.LENGTH_SHORT).show();
     }
-
 }
