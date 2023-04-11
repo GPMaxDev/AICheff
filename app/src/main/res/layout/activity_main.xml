@@ -40,35 +40,41 @@
 
     <Button
         android:id="@+id/okButton"
-        android:layout_width="173dp"
-        android:layout_height="38dp"
+        android:layout_width="175dp"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/ok_button_text"
+        app:layout_constraintBottom_toTopOf="@+id/opportunityBuyingFoodTextView"
+        app:layout_constraintEnd_toStartOf="@+id/cancelButton"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="246dp" />
+        app:layout_constraintTop_toBottomOf="@+id/inputResultTextView" />
 
     <Button
         android:id="@+id/cancelButton"
         android:layout_width="175dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="20dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="20dp"
         android:text="@android:string/cancel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/okButton"
-        tools:layout_editor_absoluteY="243dp" />
+        app:layout_constraintTop_toTopOf="@+id/okButton" />
 
     <TextView
         android:id="@+id/opportunityBuyingFoodTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:minHeight="48dp"
         android:text="@string/can_you_bye_needed_ingredients"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/yesNoRadioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="304dp" />
+        app:layout_constraintTop_toBottomOf="@+id/okButton" />
 
     <RadioGroup
         android:id="@+id/yesNoRadioGroup"
@@ -134,7 +140,7 @@
         app:layout_constraintTop_toBottomOf="@+id/yesNoRadioGroup" />
 
     <RadioGroup
-        android:id="@+id/selectTypeOfDish"
+        android:id="@+id/selectTypeOfDishRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -180,11 +186,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectTypeOfDish" />
+        app:layout_constraintTop_toBottomOf="@+id/selectTypeOfDishRadioGroup" />
 
     <Spinner
         android:id="@+id/culinaryTrendsSpinner"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
@@ -200,8 +206,10 @@
 
     <Button
         android:id="@+id/searchButton"
-        android:layout_width="271dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/start_searching_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -214,7 +222,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:text="Your product list: "
+        android:text="@string/your_product_list"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
 
