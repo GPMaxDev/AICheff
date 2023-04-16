@@ -1,9 +1,6 @@
-// layter  play whith accsess to this clkass
+// layer  play with access to this class
 
 package com.gmail.dev.max.aicheff;
-
-import android.os.AsyncTask;
-import android.util.Log;
 
 import com.theokanning.openai.image.CreateImageRequest;
 import com.theokanning.openai.service.OpenAiService;
@@ -44,12 +41,13 @@ public class AiRequstSender  {
             }
         }).start();
 
-        try {
-            Thread.sleep(10000); // ожидание 10 секунд
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        while (urlLink[0] == null){
+            try {
+                Thread.sleep(1000); // ожидание 10 секунд
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-
         return urlLink[0];
     }
 
